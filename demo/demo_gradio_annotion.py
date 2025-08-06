@@ -663,5 +663,5 @@ if __name__ == "__main__":
         server_name="0.0.0.0", 
         server_port=7861,  # Use a different port to avoid conflicts
         debug=True,
-        root_dir=os.environ.get('ROOT_DIR', '')
+        root_path=os.environ.get('ROOT_PATH', '')
     )
