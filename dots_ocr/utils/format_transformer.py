@@ -170,6 +170,12 @@ def layoutjson2md(image: Image.Image, cells: list, text_key: str = 'text', no_pa
             image_crop = image.crop((x1, y1, x2, y2))
             image_base64 = PILimage_to_base64(image_crop)
             text_items.append(f"![]({image_base64})")
+        elif cell['category'] == 'Table':
+            image_crop = image.crop((x1, y1, x2, y2))
+            image_base64 = PILimage_to_base64(image_crop)
+            text_items.append(f"![]({image_base64})")
+            text = clean_text(text)
+            text_items.append(f"{text}")
         elif cell['category'] == 'Formula':
             text_items.append(get_formula_in_markdown(text))
         else:            
