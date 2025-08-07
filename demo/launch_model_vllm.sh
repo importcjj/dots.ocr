@@ -11,7 +11,7 @@ from DotsOCR import modeling_dots_ocr_vllm' `which vllm`
 
 # launch vllm server
 model_name=model
-CUDA_VISIBLE_DEVICES=0 vllm serve ${hf_model_path} --tensor-parallel-size 1 --gpu-memory-utilization 0.95  --chat-template-content-format string --served-model-name ${model_name} --trust-remote-code
+CUDA_VISIBLE_DEVICES=0 vllm serve ${hf_model_path} --tensor-parallel-size 1 --gpu-memory-utilization 0.5  --chat-template-content-format string --served-model-name ${model_name} --trust-remote-code
 
 # # run python demo after launch vllm server
 # python demo/demo_vllm.py
